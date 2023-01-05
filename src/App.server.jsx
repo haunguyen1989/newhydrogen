@@ -15,6 +15,7 @@ import {
 } from '@shopify/hydrogen';
 import {HeaderFallback, EventsListener} from '~/components';
 import {NotFound} from '~/components/index.server';
+import {Partytown} from '@builder.io/partytown/react';
 
 function App({request}) {
   const pathname = new URL(request.normalizedUrl).pathname;
@@ -35,6 +36,7 @@ function App({request}) {
     <Suspense fallback={<HeaderFallback isHome={isHome} />}>
       <EventsListener />
       <ShopifyProvider countryCode={countryCode}>
+        <Partytown debug={true} forward={['dataLayer.push']} />
         <Seo
           type="defaultSeo"
           data={{
