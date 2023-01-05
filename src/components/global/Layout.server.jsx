@@ -26,6 +26,7 @@ export function Layout({children}) {
           <HeaderWithMenu />
         </Suspense>
         <main role="main" id="mainContent" className="flex-grow">
+          <h2>Testing page</h2>
           {children}
         </main>
       </div>
